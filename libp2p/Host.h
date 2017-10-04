@@ -318,6 +318,8 @@ private:
 	/// Peers we try to connect regardless of p2p network.
 	std::set<NodeID> m_requiredPeers;
 	Mutex x_requiredPeers;
+	/// returns true if a member of m_requiredPeers
+	bool isRequiredPeer(NodeID const&); // cannot be const because of Mutex
 
 	/// The nodes to which we are currently connected. Used by host to service peer requests and keepAlivePeers and for shutdown. (see run())
 	/// Mutable because we flush zombie entries (null-weakptrs) as regular maintenance from a const method.
