@@ -188,6 +188,8 @@ protected:
 	std::unordered_map<h256, h256s> m_specialFilters = std::unordered_map<h256, std::vector<h256>>{{PendingChangedFilter, {}}, {ChainChangedFilter, {}}};
 															///< The dictionary of special filters and their additional data
 	std::map<unsigned, ClientWatch> m_watches;				///< Each and every watch - these reference a filter.
+	std::condition_variable m_signalled;
+	Mutex x_signalled;
 };
 
 }}

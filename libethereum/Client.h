@@ -328,8 +328,6 @@ protected:
 	SharedMutex x_functionQueue;
 	std::queue<std::function<void()>> m_functionQueue;	///< Functions waiting to be executed in the main thread.
 
-	std::condition_variable m_signalled;
-	Mutex x_signalled;
 	std::atomic<bool> m_syncTransactionQueue = {false};
 	std::atomic<bool> m_syncBlockQueue = {false};
 
