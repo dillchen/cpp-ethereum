@@ -100,6 +100,8 @@ public:
 	void onPeerReceipts(std::shared_ptr<EthereumPeer>, RLP const&) override {}
 
 	void onPeerAborting() override {}
+
+	void disableSync() override {}
 };
 
 class EthereumPeerTestFixture: public TestOutputHelper
